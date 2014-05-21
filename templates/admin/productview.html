@@ -1,0 +1,23 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+
+<select id="select_type">
+{% for s in search_types %}
+    <option value="">--</option>
+    <option value="{{s.required_fields}}">{{s}}</option>
+{% endfor %}
+</select>
+
+{% for s in search_types %}
+    <option value="">--</option>
+    <option value="{{s.required_fields}}">{{s}}</option>
+{% endfor %}
+
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+$('#select_type').change(function() {
+    console.log($(this).val());
+});
+</script>
+{% endblock %}
